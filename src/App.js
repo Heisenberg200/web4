@@ -1,6 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Landing from "./pages/Landing/Landing";
+import CreateUser from './pages/users/CreateUser/CreateUser';
 
 function App() {
     return ( <
@@ -12,8 +13,10 @@ function App() {
         <
         Route exact path = "/landing"
         element = { < Landing / > }
+        /> <
+        Route exact path = "/users"
+        element = { < CreateUser / > }
         />
-
 
         <
         /Routes> <
