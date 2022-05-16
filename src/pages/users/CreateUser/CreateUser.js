@@ -7,28 +7,27 @@ import "./CreateUser.css"
 function CreateUser() {
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
-    const [err, setError] = useState("");
+
 
 
     const handleSubmit = (e) => {
-        if (name === '' || surname === '')
-            setError('All the fields must be completed!')
-        else {
-            e.preventDefault();
-            const postUserData = { data: { name, surname } }
-            axios.post('https://pure-caverns-82881.herokuapp.com/api/v54/users', postUserData, {
-                headers: {
-                    "X-Access-Token": '2ef40268b1274769d2657475211ce9742ceaed9d1a08d8049575fa9f18f8b572',
 
-                }
-            }).then((response) => {
-                postUserData.data.name = response.data.name;
-                postUserData.data.surname = response.data.surname;
-                localStorage.setItem("user-data", JSON.stringify(postUserData["data"]))
 
-            })
+        e.preventDefault();
+        const postUserData = { data: { name, surname } }
+        axios.post('https://pure-caverns-82881.herokuapp.com/api/v54/users', postUserData, {
+            headers: {
+                "X-Access-Token": '2ef40268b1274769d2657475211ce9742ceaed9d1a08d8049575fa9f18f8b572',
 
-        }
+            }
+        }).then((response) => {
+            postUserData.data.name = response.data.name;
+            postUserData.data.surname = response.data.surname;
+            localStorage.setItem("user-data", JSON.stringify(postUserData["data"]))
+
+        })
+
+
     }
     return ( <
         div className = "createUserform" >
