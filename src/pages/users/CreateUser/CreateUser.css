@@ -1,5 +1,6 @@
 .create_user {
     display: flex;
+    text-align: center;
 }
 
 #addSurname {
@@ -17,4 +18,24 @@
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
     text-align: center;
+}
+
+.btn_create_user {
+    background-color: #180670;
+    border-radius: 50px;
+    border-width: 0;
+    box-shadow: rgba(25, 25, 25, .04) 0 0 1px 0, rgba(0, 0, 0, .1) 0 3px 4px 0;
+    color: rgb(180, 131, 19);
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    height: 50px;
+    padding: 0 25px;
+    transition: all 200ms;
+}
+
+.btn_create_user:hover {
+    background-color: #b8bcd6;
+    transform: scale(1.05);
 }
