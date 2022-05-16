@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ function CreateUser() {
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [err, setError] = useState("");
-    const browse = useNavigate();
+
 
     const handleSubmit = (e) => {
         if (name === '' || surname === '')
@@ -23,9 +22,10 @@ function CreateUser() {
 
                 }
             }).then((response) => {
-                postUserData.data.id = response.data.id
+                postUserData.data.name = response.data.name;
+                postUserData.data.surname = response.data.surname;
                 localStorage.setItem("user-data", JSON.stringify(postUserData["data"]))
-                browse("/quizzes")
+
             })
 
         }
