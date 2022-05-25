@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Landing from "./pages/Landing/Landing";
 import CreateUser from './pages/users/CreateUser/CreateUser';
+import SubmitResponse from './pages/Quizzes/SubmitResponse/SubmitResponse';
 
 function App() {
     return ( <
@@ -16,9 +17,10 @@ function App() {
         /> <
         Route exact path = "/users"
         element = { < CreateUser / > }
-        />
-
-        <
+        /> <
+        Route exact path = "/quizzes/submit"
+        element = { < SubmitResponse / > }
+        /> <
         /Routes> <
         /div>
     );
